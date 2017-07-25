@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B3A92591F27517000648FCC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3A92581F27517000648FCC /* StoreKit.framework */; };
+		2B3A925B1F27517600648FCC /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3A925A1F27517600648FCC /* GameKit.framework */; };
+		2B3A92641F27539800648FCC /* libMZYW_SDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3A92621F27539800648FCC /* libMZYW_SDK.a */; };
+		2B3A92651F27539800648FCC /* MZYW_SDK_resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2B3A92631F27539800648FCC /* MZYW_SDK_resources.bundle */; };
+		2B3A92671F27542200648FCC /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3A92661F27542200648FCC /* AdSupport.framework */; };
 		87395A7A1EC33BA100429A6F /* loading.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 87395A781EC33BA100429A6F /* loading.jpg */; };
 		87894C271ED3FF420039B529 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 87894C261ED3FF420039B529 /* icon.png */; };
 		87E825241EF26954001E3F9D /* Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E825231EF26954001E3F9D /* Navigation.m */; };
@@ -32,6 +37,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B3A92581F27517000648FCC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		2B3A925A1F27517600648FCC /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		2B3A925F1F27539800648FCC /* MZIAPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZIAPManager.h; sourceTree = "<group>"; };
+		2B3A92601F27539800648FCC /* MZIAPObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZIAPObserver.h; sourceTree = "<group>"; };
+		2B3A92611F27539800648FCC /* MZInitialObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZInitialObject.h; sourceTree = "<group>"; };
+		2B3A92621F27539800648FCC /* libMZYW_SDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMZYW_SDK.a; sourceTree = "<group>"; };
+		2B3A92631F27539800648FCC /* MZYW_SDK_resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MZYW_SDK_resources.bundle; sourceTree = "<group>"; };
+		2B3A92661F27542200648FCC /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		871AD14D1ED400A900021183 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		872A2C641EF255B000582A46 /* WechatData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WechatData.h; path = WechatManager/WechatData.h; sourceTree = "<group>"; };
 		87395A781EC33BA100429A6F /* loading.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = loading.jpg; sourceTree = "<group>"; };
@@ -75,9 +88,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B3A92671F27542200648FCC /* AdSupport.framework in Frameworks */,
+				2B3A925B1F27517600648FCC /* GameKit.framework in Frameworks */,
+				2B3A92641F27539800648FCC /* libMZYW_SDK.a in Frameworks */,
 				C22826E01E8138F800863954 /* CoreTelephony.framework in Frameworks */,
 				C22826DF1E8138ED00863954 /* SystemConfiguration.framework in Frameworks */,
 				C22826DE1E8138E400863954 /* libsqlite3.0.tbd in Frameworks */,
+				2B3A92591F27517000648FCC /* StoreKit.framework in Frameworks */,
 				C22826DD1E8138DB00863954 /* libz.tbd in Frameworks */,
 				C22826DC1E8138CC00863954 /* libc++.tbd in Frameworks */,
 				C20191AD1E7FDDC300D30D15 /* libWeChatSDK.a in Frameworks */,
@@ -87,6 +104,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B3A925C1F27539800648FCC /* MZYW_SDK */ = {
+			isa = PBXGroup;
+			children = (
+				2B3A925D1F27539800648FCC /* include */,
+				2B3A92621F27539800648FCC /* libMZYW_SDK.a */,
+				2B3A92631F27539800648FCC /* MZYW_SDK_resources.bundle */,
+			);
+			path = MZYW_SDK;
+			sourceTree = "<group>";
+		};
+		2B3A925D1F27539800648FCC /* include */ = {
+			isa = PBXGroup;
+			children = (
+				2B3A925E1F27539800648FCC /* MZYW_SDK */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		2B3A925E1F27539800648FCC /* MZYW_SDK */ = {
+			isa = PBXGroup;
+			children = (
+				2B3A925F1F27539800648FCC /* MZIAPManager.h */,
+				2B3A92601F27539800648FCC /* MZIAPObserver.h */,
+				2B3A92611F27539800648FCC /* MZInitialObject.h */,
+			);
+			path = MZYW_SDK;
+			sourceTree = "<group>";
+		};
 		C20191A61E7FDD9400D30D15 /* WechatSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +147,9 @@
 		C20191AE1E7FDF3700D30D15 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2B3A92661F27542200648FCC /* AdSupport.framework */,
+				2B3A925A1F27517600648FCC /* GameKit.framework */,
+				2B3A92581F27517000648FCC /* StoreKit.framework */,
 				C22826DA1E812E5900863954 /* CoreTelephony.framework */,
 				C22826D81E812E5000863954 /* SystemConfiguration.framework */,
 				C22826D61E812E4700863954 /* libsqlite3.0.tbd */,
@@ -145,6 +193,7 @@
 		C22DEF3B1E7BB994003A1F4B /* bailugame */ = {
 			isa = PBXGroup;
 			children = (
+				2B3A925C1F27539800648FCC /* MZYW_SDK */,
 				87E825251EF27F5E001E3F9D /* back.png */,
 				87E825261EF27F5E001E3F9D /* reload.png */,
 				87E825271EF27F5E001E3F9D /* share.png */,
@@ -218,6 +267,14 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = TS29QS2B86;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -245,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C22DEF4C1E7BB994003A1F4B /* LaunchScreen.storyboard in Resources */,
+				2B3A92651F27539800648FCC /* MZYW_SDK_resources.bundle in Resources */,
 				87E825291EF27F5E001E3F9D /* reload.png in Resources */,
 				87894C271ED3FF420039B529 /* icon.png in Resources */,
 				C22DEF581E7BE62E003A1F4B /* index.html in Resources */,
@@ -395,16 +453,21 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = TS29QS2B86;
+				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = bailugame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../WechatSDK";
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../WechatSDK",
+					"$(PROJECT_DIR)/bailugame/MZYW_SDK",
+				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dakagame.bailugame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -416,16 +479,21 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = TS29QS2B86;
+				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = bailugame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../WechatSDK";
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../WechatSDK",
+					"$(PROJECT_DIR)/bailugame/MZYW_SDK",
+				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dakagame.bailugame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
