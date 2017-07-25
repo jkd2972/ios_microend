@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C606F12A36E28A50767D2D62AC52E760CDCEF5F3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C606F12A36E28A50767D2D62AC52E760CDCEF5F3" : 9223372036854775807,
+    "3290A82EE03AB630D35CDD54712C777C1E37C4BD" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2A669897-0155-41EB-B73C-EF748D743CC5",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C606F12A36E28A50767D2D62AC52E760CDCEF5F3" : "bailugame-ios\/",
+    "3290A82EE03AB630D35CDD54712C777C1E37C4BD" : "bailugame-android\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "bailugame",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "bailugame\/bailugame.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/gitlab.egret-inner.com\/engine-native\/android-h5webview-wrapper.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3290A82EE03AB630D35CDD54712C777C1E37C4BD"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/gitlab.egret-inner.com\/engine-native\/bailugame-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C606F12A36E28A50767D2D62AC52E760CDCEF5F3"
+    }
+  ]
+}

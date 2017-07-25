@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>测试</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var top = {};
+            function loginWX(){
+                window.listenBackWX = function(back){
+                    
+                    log("================= " + back);
+                    
+                    if(typeof back == 'boolean'){
+                        if(back){
+                            window.egretGameCenter.loginWX("file:///android_assets/index.html?abc=1231");
+                        }
+                    }else{
+                        log(back);
+                    }
+                }
+                if(window.egretGameCenter && window.egretGameCenter.isWXInstalled()){
+                    window.egretGameCenter.loginWX("file:///android_assets/index.html?abc=1231");
+                }
+            }
+
+            function log(content){
+                var logger = document.getElementsByName("console_log")[0];
+                logger.innerHTML += "<p>"+content+"</p>";
+            }
+
+            window.onload = function(){
+                log(window.location);
+                log("init!");
+            }
+        </script>
+        <form>
+            <h1>我是标题</h1>
+            <h1>我是标题</h1>
+            <h1>我是标题</h1>
+            <h1>我是标题</h1>
+            <h1>我是标题</h1>
+            <h1>我是标题</h1>
+            
+            <input name="wxLogin" type="button" value="微信登录" onclick="loginWX()"/>
+            nbsp;nbsp;nbsp;nbsp;nbsp;nbsp;
+            <input name="refresh" type="button" value="刷新token" onclick="refreshToken()"/>
+        </form>
+        <div name="console_log"></div>
+    </body>
+</html>
