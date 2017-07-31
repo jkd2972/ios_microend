@@ -7,6 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "MZInitialObject.h"
+#import "MZIAPManager.h"
+#import "MZManager.h"
 
 @interface ViewController ()
 
@@ -25,7 +28,9 @@
     self.gameView = [[BailuGameView alloc] initWithSuperView:self.view];
 //    NSString *strURL = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
 //    NSURL *url = [[NSURL alloc] initFileURLWithPath:strURL];
-    NSString* strURL = @"http://wan.yichi666.com/go.php";
+    
+//==    NSString* strURL = @"http://wan.yichi666.com/go.php";
+    NSString* strURL = @"http://api.egret-labs.org/v2/game/22698/91284";
     NSString* param = [self getParams];
     strURL = [strURL stringByAppendingString:param];
     NSURL* url = [NSURL URLWithString:strURL];
@@ -34,18 +39,30 @@
     
     self.navigation = [[Navigation alloc] initWithSuperView:self.view WebView:self.gameView];
     
+    //拇指游玩
+    [[MZManager shareInstance] setUiViewController:self];
+    
+//    //调用登录接口
+//    [[MZInitialObject shareInitialObject] mz_LoginWithGameId:@"391" packetId:@"100391001" testModel:YES loginResult:^(NSString *ACCOUNT_ID, NSString *LOGIN_ACCOUNT, NSString *sign) {
+//        
+//        NSLog(@"%@==%@==%@", ACCOUNT_ID, LOGIN_ACCOUNT, sign);
+//        
+//    }];
+    
     NSLog(@"%@", strURL);
 }
 
 - (NSString*)getParams
 {
-    UIDevice* device = [UIDevice currentDevice];
+//    UIDevice* device = [UIDevice currentDevice];
     
-    NSString* ret = [NSString stringWithFormat:@"?url=FreeGame&network=%@&brand=%@&model=%@&deviceId=%@&imei=%@&imsi=%@&mac=%@&wd=1",
-                     [self getNetwork], @"Apple", [device model], [[device identifierForVendor] UUIDString],
-                     @"unknown", @"unknown", @"unknown"];
+//    NSString* ret = [NSString stringWithFormat:@"?url=FreeGame&network=%@&brand=%@&model=%@&deviceId=%@&imei=%@&imsi=%@&mac=%@&wd=1",
+//                     [self getNetwork], @"Apple", [device model], [[device identifierForVendor] UUIDString],
+//                     @"unknown", @"unknown", @"unknown"];
+//    ret = [ret stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+    NSString* ret = @"?egretPlat=ios_micro";
     
-    ret = [ret stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+    
     
     return ret;
 }

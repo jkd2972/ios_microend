@@ -9,6 +9,7 @@
 #import "BailuGameView.h"
 #import "WechatManager.h"
 #import "Navigation.h"
+#import "MZManager.h"
 
 @implementation BailuGameView
 
@@ -109,6 +110,9 @@
     [config.userContentController addScriptMessageHandler:self name:@"setIOSTitle"];
     [config.userContentController addScriptMessageHandler:self name:@"shareIOSWX"];
     
+    
+    [[MZManager shareInstance] initMZScript:config scriptMessageHandler:self];
+    
     CGRect bound = CGRectMake([UIScreen mainScreen].bounds.origin.x,
                               [UIScreen mainScreen].bounds.origin.y + NavigationHeight,
                               [UIScreen mainScreen].bounds.size.width,
@@ -124,6 +128,8 @@
     [_mWebView.configuration.userContentController removeScriptMessageHandlerForName:@"payIOSWX"];
     [_mWebView.configuration.userContentController removeScriptMessageHandlerForName:@"setIOSTitle"];
     [_mWebView.configuration.userContentController removeScriptMessageHandlerForName:@"shareIOSWX"];
+    
+    [[MZManager shareInstance] removeMessageHandler:_mWebView.configuration];
 }
 
 - (void)userContentController:(WKUserContentController*)userContentController
@@ -198,6 +204,8 @@
                                                   Desc:[jsonDict objectForKey:@"desc"]
                                                  Image:[jsonDict objectForKey:@"imgUrl"]
                                                   Type:[jsonDict objectForKey:@"type"]];
+    }else{
+        [[MZManager shareInstance] userContentController:userContentController didReceiveScriptMessage:message webView:self.mWebView];
     }
 }
 

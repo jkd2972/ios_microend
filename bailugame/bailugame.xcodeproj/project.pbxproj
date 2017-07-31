@@ -12,6 +12,7 @@
 		2B3A92641F27539800648FCC /* libMZYW_SDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3A92621F27539800648FCC /* libMZYW_SDK.a */; };
 		2B3A92651F27539800648FCC /* MZYW_SDK_resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2B3A92631F27539800648FCC /* MZYW_SDK_resources.bundle */; };
 		2B3A92671F27542200648FCC /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3A92661F27542200648FCC /* AdSupport.framework */; };
+		2B3A926A1F287AED00648FCC /* MZManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3A92691F287AED00648FCC /* MZManager.m */; };
 		87395A7A1EC33BA100429A6F /* loading.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 87395A781EC33BA100429A6F /* loading.jpg */; };
 		87894C271ED3FF420039B529 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 87894C261ED3FF420039B529 /* icon.png */; };
 		87E825241EF26954001E3F9D /* Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E825231EF26954001E3F9D /* Navigation.m */; };
@@ -45,6 +46,8 @@
 		2B3A92621F27539800648FCC /* libMZYW_SDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMZYW_SDK.a; sourceTree = "<group>"; };
 		2B3A92631F27539800648FCC /* MZYW_SDK_resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MZYW_SDK_resources.bundle; sourceTree = "<group>"; };
 		2B3A92661F27542200648FCC /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		2B3A92681F287AED00648FCC /* MZManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZManager.h; sourceTree = "<group>"; };
+		2B3A92691F287AED00648FCC /* MZManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZManager.m; sourceTree = "<group>"; };
 		871AD14D1ED400A900021183 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		872A2C641EF255B000582A46 /* WechatData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WechatData.h; path = WechatManager/WechatData.h; sourceTree = "<group>"; };
 		87395A781EC33BA100429A6F /* loading.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = loading.jpg; sourceTree = "<group>"; };
@@ -211,6 +214,8 @@
 				C22DEF4A1E7BB994003A1F4B /* LaunchScreen.storyboard */,
 				C22DEF4D1E7BB994003A1F4B /* Info.plist */,
 				C22DEF3C1E7BB994003A1F4B /* Supporting Files */,
+				2B3A92681F287AED00648FCC /* MZManager.h */,
+				2B3A92691F287AED00648FCC /* MZManager.m */,
 			);
 			path = bailugame;
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 				C22DEF411E7BB994003A1F4B /* AppDelegate.m in Sources */,
 				C22826CD1E80E46000863954 /* WechatManager.m in Sources */,
 				C22DEF3E1E7BB994003A1F4B /* main.m in Sources */,
+				2B3A926A1F287AED00648FCC /* MZManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

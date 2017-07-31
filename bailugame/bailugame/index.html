@@ -28,10 +28,31 @@
                 var logger = document.getElementsByName("console_log")[0];
                 logger.innerHTML += "<p>"+content+"</p>";
             }
-
+        
+        
             window.onload = function(){
                 log(window.location);
                 log("init!");
+            }
+        
+        
+            function mzLogin(){
+                alert("mzLogin");
+                var param = "{\"gameId_S\":\"gameId_S\",\"packetId_S\":\"packetId_S\",\"testModel_I\":1}";
+                window.mzyw.mz_login(param);
+            }
+
+            window.mzOnLoginResult = function(loginInfo){
+                log("mzOnLoginResult ：account_id="+loginInfo["account_id"]+";login_account="+loginInfo["login_account"]+";sign="+loginInfo["sign"]);
+            }
+        
+            function mzBuy(){
+                var params = "{\"productId_S\":\"productId_S\",\"cpServerId_I\":\"cpServerId_I\",\"cpOrderId_S\":\"cpOrderId_S\",\"cpGameName_S\":\"cpGameName_S\",\"cpGameLevel_I\":\"cpGameLevel_I\",\"cpVerifyHost_S\":\"cpVerifyHost_S\"}"；
+                
+                window.mzyw.mz_buyWithId(params);
+            }
+            window.mzOnPaymentResult = function(paymentResult){
+                log("mzOnPaymentResult ：result="+paymentResult["result"]+";orderId="+paymentResult["orderId"]+";amount="+paymentResult["amount"]);
             }
         </script>
         <form>
@@ -42,8 +63,11 @@
             <h1>我是标题</h1>
             <h1>我是标题</h1>
             
-            <input name="wxLogin" type="button" value="微信登录" onclick="loginWX()"/>
-            nbsp;nbsp;nbsp;nbsp;nbsp;nbsp;
+            <!--input name="wxLogin" type="button" value="微信登录" onclick="loginWX()"/-->
+            <input name="wxLogin" type="button" value="拇指玩登录" onclick="mzLogin()"/>
+            &nbsp;&nbsp;&nbsp;
+            <input name="wxLogin" type="button" value="拇指玩购买" onclick="mzBuy()"/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input name="refresh" type="button" value="刷新token" onclick="refreshToken()"/>
         </form>
         <div name="console_log"></div>

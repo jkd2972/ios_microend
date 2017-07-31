@@ -10,6 +10,7 @@
 #import "WXApi.h"
 #import "WechatManager.h"
 #import "WechatData.h"
+#import "MZIAPObserver.h"
 
 @interface AppDelegate ()
 
@@ -21,6 +22,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [WXApi registerApp:@APP_ID];
+    
+    //验证掉单
+    [[MZIAPObserver shareStoreObserver] mz_restoreLastNoFinishedPaymentByTestModel:YES lastPaymentResult:^(NSString *lastPaymentResult, NSString *muzhiOrderId, int payAmount) {
+        NSLog(@"%@==%@==%d", lastPaymentResult, muzhiOrderId, payAmount);
+    }];
+    
     return YES;
 }
 
