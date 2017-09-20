@@ -38,7 +38,6 @@
     [self.gameView.mWebView loadRequest:request];
     
     self.navigation = [[Navigation alloc] initWithSuperView:self.view WebView:self.gameView];
-    
     //拇指游玩
     [[MZManager shareInstance] setUiViewController:self];
     
@@ -112,6 +111,11 @@
     }
     
     return stateString;
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+  
+   [_gameView resetMessageHandler];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

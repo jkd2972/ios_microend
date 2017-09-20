@@ -17,6 +17,7 @@ static const int NavigationOffset = 24;
 @class BailuGameView;
 @interface Navigation : NSObject
 
+
 - (instancetype)initWithSuperView:(UIView*)superView WebView:(BailuGameView*)webview;
 + (Navigation*)getInstance;
 - (void)setTitle:(NSString*)str;

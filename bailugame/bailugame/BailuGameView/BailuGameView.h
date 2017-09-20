@@ -20,9 +20,11 @@
 
 @property WKWebView *mWebView;
 @property UIView *mSuperView;
+@property BOOL isMessageHandleSetted;
 
 -(instancetype)initWithSuperView:(UIView *)superView;
 -(void)removeMessageHandler;
+-(void)resetMessageHandler;
 
 - (void)goBack;
 - (void)reload;

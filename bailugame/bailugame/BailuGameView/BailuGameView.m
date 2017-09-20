@@ -104,14 +104,14 @@
                                                   injectionTime:WKUserScriptInjectionTimeAtDocumentStart
                                                forMainFrameOnly:NO];
     [config.userContentController addUserScript:script];
-    
+   
     [config.userContentController addScriptMessageHandler:self name:@"EgretIOSLoginWX"];
     [config.userContentController addScriptMessageHandler:self name:@"payIOSWX"];
     [config.userContentController addScriptMessageHandler:self name:@"setIOSTitle"];
     [config.userContentController addScriptMessageHandler:self name:@"shareIOSWX"];
     
-    
     [[MZManager shareInstance] initMZScript:config scriptMessageHandler:self];
+    self.isMessageHandleSetted = true;
     
     CGRect bound = CGRectMake([UIScreen mainScreen].bounds.origin.x,
                               [UIScreen mainScreen].bounds.origin.y + NavigationHeight,
@@ -122,20 +122,37 @@
     
 }
 
+-(void)resetMessageHandler{
+    if(!self.isMessageHandleSetted){
+//        WKWebViewConfiguration* config = _mWebView.configuration;
+//        [config.userContentController addScriptMessageHandler:self name:@"EgretIOSLoginWX"];
+//        [config.userContentController addScriptMessageHandler:self name:@"payIOSWX"];
+//        [config.userContentController addScriptMessageHandler:self name:@"setIOSTitle"];
+//        [config.userContentController addScriptMessageHandler:self name:@"shareIOSWX"];
+//        
+//        [[MZManager shareInstance] resetMessageHandler:_mWebView.configuration scriptMessageHandler:self];
+        self.isMessageHandleSetted = true;
+    }
+}
+
 -(void)removeMessageHandler
 {
-    [_mWebView.configuration.userContentController removeScriptMessageHandlerForName:@"EgretIOSLoginWX"];
-    [_mWebView.configuration.userContentController removeScriptMessageHandlerForName:@"payIOSWX"];
-    [_mWebView.configuration.userContentController removeScriptMessageHandlerForName:@"setIOSTitle"];
-    [_mWebView.configuration.userContentController removeScriptMessageHandlerForName:@"shareIOSWX"];
-    
-    [[MZManager shareInstance] removeMessageHandler:_mWebView.configuration];
+//    [_mWebView.configuration.userContentController removeScriptMessageHandlerForName:@"EgretIOSLoginWX"];
+//    [_mWebView.configuration.userContentController removeScriptMessageHandlerForName:@"payIOSWX"];
+//    [_mWebView.configuration.userContentController removeScriptMessageHandlerForName:@"setIOSTitle"];
+//    [_mWebView.configuration.userContentController removeScriptMessageHandlerForName:@"shareIOSWX"];
+//    
+//    [[MZManager shareInstance] removeMessageHandler:_mWebView.configuration];
+    self.isMessageHandleSetted = false;
 }
 
 - (void)userContentController:(WKUserContentController*)userContentController
       didReceiveScriptMessage:(WKScriptMessage*)message
 {
-    NSLog(@"%s-----%@", __func__, message);
+   // NSLog(@"%s-----%@", __func__, message);
+    if(!self.isMessageHandleSetted){
+        return;
+    }
     if ([message.name isEqualToString:@"EgretIOSLoginWX"])
     {
         NSString* newUrl = message.body;
@@ -232,7 +249,7 @@
 - (void)webViewWebContentProcessDidTerminate:(WKWebView*)webView NS_AVAILABLE(10_11, 9_0){
     
     NSLog(@"进程被终止");
-    NSLog(@"%@",webView.URL);
+    NSLog(@"== %@",webView.URL);
 //    processDidTerminated = YES;
 //    [webView reload];
     
@@ -248,7 +265,8 @@
         urlStr = [urlStr stringByReplacingOccurrencesOfString:@"%3D" withString:@"="];
         [[WechatManager sharedManager] payWX:urlStr];
     }
-    NSLog(@"%@", urlStr);
+    
+    NSLog(@"-- %@", urlStr);
     [[Navigation getInstance] setCurrentUrl:webView.URL.absoluteString];
     
     decisionHandler(WKNavigationActionPolicyAllow);

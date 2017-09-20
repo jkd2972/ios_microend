@@ -66,7 +66,9 @@ static Navigation* _instance;
     {
         _backBtn.hidden = false;
     }
+    _backBtn.hidden = true;
 }
+
 
 - (void)createView
 {
@@ -95,7 +97,7 @@ static Navigation* _instance;
                                                            btnSize, btnSize)];
     [_shareBtn setBackgroundColor:btnColor];
     [_shareBtn setBackgroundImage:shareImg forState:UIControlStateNormal];
-    [_uiView addSubview:_shareBtn];
+  //  [_uiView addSubview:_shareBtn];
     
     UIImage* reloadImg = [UIImage imageNamed:@"reload.png"];
     _reloadBtn = [[UIButton alloc] initWithFrame:CGRectMake(superBound.size.width - height * 2 + (height - btnSize) / 2,
